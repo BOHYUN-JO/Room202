@@ -1,4 +1,4 @@
-package com.team202.room202back.board.domain;
+package com.team202.room202back.article.domain.dto;
 
 
 import lombok.Getter;
@@ -20,7 +20,6 @@ public class ArticleResponseDto {
     private LocalDateTime createdDate;
 
     private LocalDateTime modifiedDate;
-
 
     public ArticleResponseDto(Long id, String title, String content, int viewCount, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;

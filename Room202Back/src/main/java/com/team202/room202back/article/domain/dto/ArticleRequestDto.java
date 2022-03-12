@@ -1,6 +1,8 @@
-package com.team202.room202back.board.domain;
+package com.team202.room202back.article.domain.dto;
 
 
+import com.team202.room202back.article.domain.Article;
+import com.team202.room202back.board.domain.Board;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,17 +17,21 @@ public class ArticleRequestDto {
 
     private int viewCount;
 
-    public ArticleRequestDto(String title, String content, int viewCount) {
+    private Long boardId;
+
+    public ArticleRequestDto(String title, String content, int viewCount, Long boardId) {
         this.title = title;
         this.content = content;
         this.viewCount = viewCount;
+        this.boardId = boardId;
     }
 
-    public Article toEntity(){
+    public Article toEntity(Board board){
         return Article.builder()
                 .title(title)
                 .content(content)
                 .viewCount(viewCount)
+                .board(board)
                 .build();
     }
 

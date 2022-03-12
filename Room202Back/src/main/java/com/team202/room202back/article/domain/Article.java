@@ -1,6 +1,7 @@
-package com.team202.room202back.board.domain;
+package com.team202.room202back.article.domain;
 
 
+import com.team202.room202back.board.domain.Board;
 import com.team202.room202back.common.BaseEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -14,26 +15,27 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @AttributeOverride(name = "id", column = @Column(name = "article_id"))
-public class Article {
+public class Article extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "article_title")
+    @Column(nullable = false)
     private String title;
 
-    @Column(name = "article_content")
+    @Lob
     private String content;
 
-    @Column(name = "article_view_count")
     private int viewCount;
 
+    @ManyToOne
+    @JoinColumn(name = "board_id")
+    private Board board;
+
     @Builder
-    public Article(Long id, LocalDateTime createdDate, LocalDateTime modifiedDate, String title, String content, int viewCount) {
-        this.id = id;
+    public Article(Long id, LocalDateTime createdDate, LocalDateTime modifiedDate, String title, String content, int viewCount, Board board) {
+        super(id, createdDate, modifiedDate);
         this.title = title;
         this.content = content;
         this.viewCount = viewCount;
+        this.board = board;
     }
+
 }
