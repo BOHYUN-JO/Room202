@@ -1,4 +1,4 @@
-package com.team202.room202back;
+package com.team202.room202back.article;
 
 
 import com.team202.room202back.board.domain.Board;
@@ -27,13 +27,9 @@ public class ArticleServiceTest {
 
         ArticleRequestDto articleRequestDto = new ArticleRequestDto("test", "please", 1, savedBoard.getId());
 
-        Long result = articleService.save(articleRequestDto);
+        articleService.save(articleRequestDto);
 
-        if(result > 0){
-            System.out.println("success");
-        }else{
-            System.out.println("fail");
-        }
+
 
     }
 

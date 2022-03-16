@@ -1,6 +1,7 @@
 package com.team202.room202back.article.domain;
 
 
+import com.team202.room202back.article.domain.dto.ArticleRequestDto;
 import com.team202.room202back.board.domain.Board;
 import com.team202.room202back.common.BaseEntity;
 import lombok.AccessLevel;
@@ -28,6 +29,12 @@ public class Article extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "board_id")
     private Board board;
+
+    public void update(ArticleRequestDto articleRequestDto){
+        this.title = articleRequestDto.getTitle();
+        this.content = articleRequestDto.getContent();
+        this.viewCount = articleRequestDto.getViewCount();
+    }
 
     @Builder
     public Article(Long id, LocalDateTime createdDate, LocalDateTime modifiedDate, String title, String content, int viewCount, Board board) {
