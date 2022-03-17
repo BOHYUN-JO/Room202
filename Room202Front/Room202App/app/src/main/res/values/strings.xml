@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Room202App</string>
+    <string name="http_default_path">http://localhost:8080</string>
+</resources>
