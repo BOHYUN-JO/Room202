@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <TextView
+        android:id="@+id/board_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="글 추가/수정"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:background="@color/sky_dark"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:id="@+id/dialog_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/board_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dialog_button_layout"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/article_title_layout"
+                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content"
+                app:helperTextTextColor="@color/sky"
+                app:helperText="글 제목 입력"
+                app:helperTextEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/article_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="true"
+                android:singleLine="true"
+                android:backgroundTint="@color/sky"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/black"
+                android:fontFamily="@font/katuri"
+                android:textSize="17dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/article_content"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:background="@drawable/edit_text_background"
+                android:gravity="start"
+                android:singleLine="false"
+                android:textSize="14dp"
+                android:fontFamily="@font/katuri"
+                android:hint="내용을 입력하세요."/>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/dialog_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/dialog_content_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/gray"
+            android:text="취소"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/save_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/sky_dark"
+            android:gravity="center"
+            android:text="저장"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
