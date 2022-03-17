@@ -1,6 +1,8 @@
 package com.team202.room202back.article.domain.dto;
 
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.team202.room202back.article.domain.Article;
 import com.team202.room202back.board.domain.Board;
 import lombok.AccessLevel;
@@ -9,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class ArticleRequestDto {
 
     private String title;

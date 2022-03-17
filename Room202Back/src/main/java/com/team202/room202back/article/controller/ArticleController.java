@@ -1,9 +1,13 @@
 package com.team202.room202back.article.controller;
 
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.team202.room202back.article.domain.dto.ArticleRequestDto;
 import com.team202.room202back.article.domain.dto.ArticleResponseDto;
 import com.team202.room202back.article.service.ArticleService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.javassist.NotFoundException;
@@ -13,11 +17,11 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/articles")
 public class ArticleController {
 
-    private ArticleService articleService;
-
+    private final ArticleService articleService;
 
     @GetMapping("/{article_id}")
     @ResponseStatus(HttpStatus.OK)
@@ -26,7 +30,7 @@ public class ArticleController {
     }
 
     @PostMapping()
-    public ArticleResponseDto save(@RequestBody ArticleRequestDto articleRequestDto){
+    public ArticleResponseDto save(@RequestBody ArticleRequestDto articleRequestDto) {
         return articleService.save(articleRequestDto);
     }
 

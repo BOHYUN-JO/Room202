@@ -8,12 +8,14 @@ import com.team202.room202back.article.domain.dto.ArticleResponseDto;
 import com.team202.room202back.board.domain.Board;
 import com.team202.room202back.board.domain.BoardRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Optional;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class ArticleService {

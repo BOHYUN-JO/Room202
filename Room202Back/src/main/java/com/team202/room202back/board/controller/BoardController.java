@@ -1,9 +1,11 @@
 package com.team202.room202back.board.controller;
 
 import com.team202.room202back.article.domain.Article;
+import com.team202.room202back.article.domain.dto.ArticleResponseDto;
 import com.team202.room202back.board.domain.dto.BoardResponseDto;
 import com.team202.room202back.board.service.BoardService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +23,7 @@ public class BoardController {
     }
 
     @GetMapping("/{board_id}")
-    public List<Article> viewDetail(@RequestParam("board_id") Long id, @PathVariable("page") int page){
+    public List<ArticleResponseDto> viewDetail(@RequestParam("board_id") Long id, @PathVariable("page") int page) throws NotFoundException {
         return boardService.viewDetail(id, page);
     }
 

@@ -5,6 +5,7 @@ import com.team202.room202back.comment.domain.dto.CommentRequestDto;
 import com.team202.room202back.comment.domain.dto.CommentResponseDto;
 import com.team202.room202back.comment.service.CommentService;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,13 +13,14 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/articles/{article_id}")
 public class CommentController {
 
-    private CommentService commentService;
+    private final CommentService commentService;
 
     @GetMapping("/comments")
-    public List<Comment> viewAll(@PathVariable Long article_id){
+    public List<CommentResponseDto> viewAll(@PathVariable Long article_id){
         return commentService.viewAll(article_id);
     }
 
@@ -29,7 +31,7 @@ public class CommentController {
 
     @DeleteMapping("/comments/{comment_id}")
     public void delete(@PathVariable Long commentId){
-        commentService.delete(commentId);
+        commentService.deleteById(commentId);
     }
 
 }

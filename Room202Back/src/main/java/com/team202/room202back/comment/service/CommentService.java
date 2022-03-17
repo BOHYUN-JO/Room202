@@ -10,7 +10,9 @@ import com.team202.room202back.comment.domain.dto.CommentResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -19,10 +21,18 @@ public class CommentService {
     private final ArticleRepository articleRepository;
     private final CommentRepository commentRepository;
 
-    public List<Comment> viewAll(Long id){
-        return commentRepository.findAll();
+    @Transactional
+    public List<CommentResponseDto> viewAll(Long id){
+        Article article = articleRepository.getById(id);
+        List<Comment> comments = article.getComments();
+        return comments
+                .stream()
+                .map( comment -> new CommentResponseDto(comment.getId(), comment.getContent(), comment.getCreatedDate(),
+                        comment.getModifiedDate() ))
+                .collect(Collectors.toList());
     }
 
+    @Transactional
     public CommentResponseDto save(CommentRequestDto commentRequestDto){
         Article article = articleRepository.getById(commentRequestDto.getArticleId());
         Comment comment = commentRepository.save(commentRequestDto.toEntity(article));
@@ -31,7 +41,8 @@ public class CommentService {
         return commentResponseDto;
     }
 
-    public void delete(Long id){
+    @Transactional
+    public void deleteById(Long id){
         commentRepository.deleteById(id);
     }
 

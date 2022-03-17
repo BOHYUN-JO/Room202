@@ -23,7 +23,7 @@ public class Board extends BaseEntity{
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "board")
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
     List<Article> articles = new ArrayList<Article>();
 
     @Builder

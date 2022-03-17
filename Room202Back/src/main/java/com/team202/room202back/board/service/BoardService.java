@@ -7,8 +7,10 @@ import com.team202.room202back.board.domain.BoardRepository;
 import com.team202.room202back.board.domain.dto.BoardResponseDto;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +20,7 @@ public class BoardService {
 
     private final BoardRepository boardRepository;
 
+    @Transactional
     public List<BoardResponseDto> viewAll(){
         List<BoardResponseDto> boardResponseDtoList = boardRepository.findAll()
                 .stream()
@@ -26,9 +29,14 @@ public class BoardService {
         return boardResponseDtoList;
     }
 
-    public List<Article> viewDetail(Long id, int page){
-        Board board = boardRepository.getById(id);
-        return board.getArticles();
+    @Transactional
+    public List<ArticleResponseDto> viewDetail(Long id, int page) throws NotFoundException {
+        Board board = boardRepository.findById(id).orElseThrow(()-> new NotFoundException("NO"));
+        return board.getArticles()
+                .stream()
+                .map(article -> new ArticleResponseDto(article.getId(), article.getTitle(), article.getContent(),
+                        article.getViewCount(),article.getCreatedDate(), article.getModifiedDate() ) )
+                .collect(Collectors.toList());
     }
 
 }

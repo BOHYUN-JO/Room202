@@ -3,6 +3,7 @@ package com.team202.room202back.article.domain;
 
 import com.team202.room202back.article.domain.dto.ArticleRequestDto;
 import com.team202.room202back.board.domain.Board;
+import com.team202.room202back.comment.domain.Comment;
 import com.team202.room202back.common.BaseEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -11,6 +12,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -29,6 +32,9 @@ public class Article extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "board_id")
     private Board board;
+
+    @OneToMany(mappedBy = "article", fetch = FetchType.EAGER)
+    private List<Comment> comments = new ArrayList<Comment>();
 
     public void update(ArticleRequestDto articleRequestDto){
         this.title = articleRequestDto.getTitle();
