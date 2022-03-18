@@ -5,11 +5,24 @@ Room202 프로젝트는 같은 고등학교 기숙사(202호) 룸메이트들의
 기능은 간단하지만 프론트엔드, 백엔드 분야의 기본기를 다지고 포트폴리오로 사용할 수 있게 완성도 있는 프로젝트를 
 만드는 것이 목적이다.
 
+### 1) 기능
+
+
 ## 2. Front-End
 <성현이가 채워넣어주셈>
 
 ## 3. Back-End
-<효준이가 넣어주셈>
+### 1) Spring Boot 2.6.4
+### 2) Gradle
+### 3) Swagger 3.0.0
 
 ## 4. DB
-<내가 채워 넣을 부분>
+
+### 1) ERD <br><br>
+![image](https://user-images.githubusercontent.com/70252973/158993678-688b9fc8-6ed2-45f0-a6e1-4faecd847f27.png)
+
+
+### 2) 사용한 RDBMS <br>
+mariaDB 10.7
+
+### 3) JPA 이용
