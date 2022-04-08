@@ -9,7 +9,8 @@ Room202 프로젝트는 같은 고등학교 기숙사(202호) 룸메이트들의
 
 
 ## 2. Front-End
-<TODO : 성현이가 채워주기 >
+### Android Studio
+<TODO : 성현이가 자세히 채워주기 >
 
 ## 3. Back-End
 ### 1) Spring Boot 2.6.4
