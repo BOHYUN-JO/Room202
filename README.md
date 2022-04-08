@@ -19,6 +19,8 @@ d) 댓글 기능 <br>
 ### 1) Spring Boot 2.6.4
 ### 2) Gradle
 ### 3) Swagger 3.0.0
+### 4) 구조
+![image](https://user-images.githubusercontent.com/70252973/162367712-db17aae9-2f5f-43f5-bad3-23f3bd24c167.png)
 
 ## 4. DB
 
