@@ -9,7 +9,8 @@ Room202 프로젝트는 같은 고등학교 기숙사(202호) 룸메이트들의
 a) 게시글 조회 <br>
 b) 게시글 등록 <br>
 c) 게시글 삭제 <br>
-d) 댓글 기능 <br>
+d) 게시글 수정 <br>
+e) 댓글 기능 <br>
 
 ## 2. Front-End
 ### Android Studio
