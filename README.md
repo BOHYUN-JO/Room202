@@ -28,7 +28,7 @@ d) 댓글 기능 <br>
 ![image](https://user-images.githubusercontent.com/70252973/158993678-688b9fc8-6ed2-45f0-a6e1-4faecd847f27.png)
 
 
-### 2) 사용한 RDBMS <br>
-mariaDB 10.7
+### 2) mariaDB 10.7
 
-### 3) JPA 이용
+
+### 3) JPA
