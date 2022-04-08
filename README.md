@@ -12,9 +12,14 @@ c) 게시글 삭제 <br>
 d) 게시글 수정 <br>
 e) 댓글 기능 <br>
 
+### 2) 실행 환경
+해당 프로젝트는 배포하지 않았다. 실행하기 위해서는 다음과 같은 것들이 필요하다. <br>
+1. IntelliJ와 같은 IDE 환경에서 백엔드 서버 실행(빌드 도구 : Gradle)<br>
+2. MariaDB 데이터베이스 서버   <br>
+3. 안드로이드 스튜디오와 같은 안드로이드 에뮬레이터<br>
+
 ## 2. Front-End
 ### Android Studio
-<TODO : 성현이가 자세히 채워주기 >
 
 ## 3. Back-End
 ### 1) Spring Boot 2.6.4
