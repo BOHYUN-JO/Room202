@@ -31,7 +31,7 @@ e) 댓글 기능 <br>
 ## 4. DB
 
 ### 1) ERD <br><br>
-![image](https://user-images.githubusercontent.com/70252973/158993678-688b9fc8-6ed2-45f0-a6e1-4faecd847f27.png)
+![image](https://user-images.githubusercontent.com/70252973/163800921-2ad697d5-7d0f-46f1-a878-ba4ccd97f49e.png)
 
 
 ### 2) mariaDB 10.7
