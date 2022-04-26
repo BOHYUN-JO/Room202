@@ -1,6 +1,7 @@
 package com.team202.room202back.article.domain.dto;
 
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 
 import java.time.LocalDate;

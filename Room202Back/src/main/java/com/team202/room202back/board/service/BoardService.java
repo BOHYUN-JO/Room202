@@ -1,5 +1,6 @@
 package com.team202.room202back.board.service;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.team202.room202back.article.domain.Article;
 import com.team202.room202back.article.domain.dto.ArticleResponseDto;
 import com.team202.room202back.board.domain.Board;

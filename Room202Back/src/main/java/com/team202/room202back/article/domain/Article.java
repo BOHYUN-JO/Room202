@@ -33,7 +33,7 @@ public class Article extends BaseEntity{
     @JoinColumn(name = "board_id")
     private Board board;
 
-    @OneToMany(mappedBy = "article", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "article")
     private List<Comment> comments = new ArrayList<Comment>();
 
     public void update(ArticleRequestDto articleRequestDto){

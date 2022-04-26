@@ -22,7 +22,6 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 @SpringBootTest
 public class CommentServiceTest {
 
-
     @Autowired
     private ArticleService articleService;
 
@@ -39,11 +38,11 @@ public class CommentServiceTest {
 
     @Test
     public void viewAllTest(){
-        commentService.save(new CommentRequestDto("test1", 1L));
-        commentService.save(new CommentRequestDto("test2", 1L));
-        commentService.save(new CommentRequestDto("test3", 1L));
+        commentService.save(new CommentRequestDto("test1", 74L));
+        commentService.save(new CommentRequestDto("test2", 74L));
+        commentService.save(new CommentRequestDto("test3", 74L));
 
-        List<CommentResponseDto> commentResponseDtos = commentService.viewAll(1L);
+        List<CommentResponseDto> commentResponseDtos = commentService.viewAll(74L);
         for(CommentResponseDto commentResponseDto : commentResponseDtos){
             System.out.println(commentResponseDto.getContent());
         }
@@ -53,7 +52,7 @@ public class CommentServiceTest {
     @Test
     public void saveTest() throws NotFoundException {
         //given
-        CommentResponseDto commentResponseDto = commentService.save(new CommentRequestDto("good", 1L));
+        CommentResponseDto commentResponseDto = commentService.save(new CommentRequestDto("good", 74L));
 
         //when
         Comment comment = commentRepository.findById(commentResponseDto.getId()).orElseThrow(()->new NotFoundException("No"));
@@ -65,7 +64,7 @@ public class CommentServiceTest {
     @Test
     public void deleteTest() {
         // given
-        CommentResponseDto commentResponseDto = commentService.save(new CommentRequestDto("bad", 1L));
+        CommentResponseDto commentResponseDto = commentService.save(new CommentRequestDto("bad", 74L));
 
         // when
         commentService.deleteById(commentResponseDto.getId());
