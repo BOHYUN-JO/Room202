@@ -16,7 +16,7 @@ e) 댓글 기능 <br>
 ![image](https://user-images.githubusercontent.com/70252973/165243541-8b176007-d067-47e5-980b-07fb5a350f04.png)
 
 
-### 2) 실행 환경
+### 3) 실행 환경
 해당 프로젝트는 배포하지 않았다. 실행하기 위해서는 다음과 같은 것들이 필요하다. <br>
 1. IntelliJ와 같은 IDE 환경에서 백엔드 서버 실행(빌드 도구 : Gradle)<br>
 2. MariaDB 데이터베이스 서버   <br>
